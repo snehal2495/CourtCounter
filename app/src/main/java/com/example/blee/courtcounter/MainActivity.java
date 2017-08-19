@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     int teamScoreA=0;
     int teamScoreB=0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,11 +73,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetScore(View view)
     {
+        TextView winner=(TextView)findViewById(R.id.textviewwinner);
+        winner.setText("");
         teamScoreA=0;
         teamScoreB=0;
+
+
+
         scoreforTeamA(teamScoreA);
         scoreForTeamB(teamScoreB);
     }
+
+    public void winnerTeam(View v)
+    {
+
+        TextView winner=(TextView)findViewById(R.id.textviewwinner);
+
+        if(teamScoreA>teamScoreB)
+
+
+        {
+            winner.setText("Congrats Team A");
+        }else
+            winner.setText("Congrats Team B");
+
+
+    }
+
+
 
 
 }
